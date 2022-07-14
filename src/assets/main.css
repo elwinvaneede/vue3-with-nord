@@ -1,35 +1,85 @@
 @import "./base.css";
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-
-  font-weight: normal;
+/* Nav header toggle */
+.nav-lock {
+  display: none;
 }
-
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-}
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
+@media (min-width: 768px) {
+  nord-layout[nav-open] .nav-toggle {
+    display: none;
+  }
+  .nav-toggle:hover .nav-lock {
+    display: block;
+  }
+  .nav-toggle:hover .nav-unlock {
+    display: none;
   }
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
+/* Nav header prototype */
+.has-logo nord-icon {
+  display: none;
+}
+.has-logo .n-clinic-img {
+  opacity: 1;
+  visibility: visible;
+}
+.has-logo .n-clinic-name,
+.has-logo .n-clinic-icon {
+  opacity: 0;
+  visibility: hidden;
+}
+.n-clinic-img {
+  max-width: calc(100% - var(--n-space-xl) - var(--n-space-s));
+  width: calc(100% - var(--n-space-xl) - var(--n-space-s));
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  margin-left: calc(var(--n-space-s) / 1.2);
+  background: transparent;
+  height: 100%;
+  background-position: 0 50%;
+  background-repeat: no-repeat;
+  background-size: 60% auto;
+}
+.n-logo-contents,
+.n-clinic-name {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+}
+.n-clinic-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  display: inline-block;
+}
+.n-clinic-icon {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50% 50%;
+}
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
+/* Responsive settings */
+@media (max-width: 550px) {
+  .filter {
+    display: none;
   }
+}
+@media (max-width: 450px) {
+  .export {
+    display: none;
+  }
+}
+@media (max-width: 370px) {
+  .new {
+    display: none;
+  }
+}
+
+[data-action="delete"] span,
+[data-action="delete"] nord-icon {
+  color: var(--n-color-text-error);
 }

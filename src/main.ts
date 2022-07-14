@@ -5,7 +5,6 @@ import App from "./App.vue";
 import router from "./router";
 
 import "@nordhealth/css";
-import "@nordhealth/themes/lib/nord-dark.css";
 import "./assets/main.css";
 
 const app = createApp(App);

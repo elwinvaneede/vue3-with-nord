@@ -15,4 +15,7 @@ module.exports = {
       extends: ["plugin:cypress/recommended"],
     },
   ],
+  rules: {
+    "vue/no-deprecated-slot-attribute": "off",
+  },
 };
