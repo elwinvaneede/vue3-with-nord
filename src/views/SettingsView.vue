@@ -18,8 +18,8 @@ import "@nordhealth/components/lib/Button";
           <nord-input
             expand
             name="name"
-            label="Workspace name"
-            value="Nord Design System"
+            :label.attr="'Workspace name'"
+            :value.attr="'Nord Design System'"
           ></nord-input>
           <nord-input
             expand
